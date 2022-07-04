@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-batch-app
+  batch:
+    initialize-schema: ALWAYS
+    job:
+      enabled: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    hikari:
+      idle-timeout: 10000
+#    sql:
+#      init:
+#        data-locations*:
+#          - data.sql
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+
+
+server:
+  port: 9191
